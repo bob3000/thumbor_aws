@@ -35,6 +35,7 @@ def load(context, url, callback):
             else:
                 callback(file_key['Body'].read())
 
+        key = key.decode('utf-8')
         bucket_loader.get(key, callback=handle_data)
     else:
         callback(None)
